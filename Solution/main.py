@@ -2,10 +2,8 @@ from Solution.Solution import Solution
 
 def main():
     query = input("")
-    while query:
-        soln = Solution(query)
-        print(soln.doOrder())
-        query = input("")
-      
+    soln = Solution(query)
+    return soln.doOrder()
+    
 if __name__ == '__main__':
     main()
