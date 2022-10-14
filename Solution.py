@@ -20,6 +20,7 @@ class Solution:
                 Order.getItems(int(item))
             return self._returnString(Order)
         except:
+            self.error = "Unable to process: " + self.error
             return self.error
             
     def _parse(self):
@@ -33,18 +34,18 @@ class Solution:
             self.meal = "Dinner"
             self.items = self.query[7:].split(',')
         else:
-            self.error = "Unable to process, meal selection is invalid"
+            self.error = "Meal selection is invalid"
             raise Exception()
             
     def _validateOrder(self):
         if '1' not in self.items and '2' not in self.items:
-            self.error = "Unable to process: Main is missing, side is missing"
+            self.error = "Main is missing, side is missing"
         elif '1' not in self.items:
-            self.error = "Unable to process: Main is missing"
+            self.error = "Main is missing"
         elif '2' not in self.items:
-            self.error = "Unable to process: Side is missing"
+            self.error = "Side is missing"
         elif self.meal == "Dinner" and '4' not in self.items:
-            self.error = "Unable to process: Dessert is missing"
+            self.error = "Dessert is missing"
         elif self.items.count('1') > 1:
             string = ""
             match self.meal:
@@ -54,7 +55,7 @@ class Solution:
                     string = "Sandwich"
                 case "Dinner":
                     string = "Steak"
-            self.error = "Unable to process: " + string + " cannot be ordered more than once"
+            self.error = string + " cannot be ordered more than once"
         elif self.meal != "Lunch" and self.items.count('2') > 1:
             string = ""
             match self.meal:
@@ -62,7 +63,7 @@ class Solution:
                     string = "Toast"
                 case "Dinner":
                     string = "Potatoes"
-            self.error = "Unable to process: " + string + " cannot be ordered more than once"
+            self.error = string + " cannot be ordered more than once"
         elif self.meal != "Breakfast" and '3' in self.items and self.items.count('3') > 1:
             string = ""
             match self.meal:
@@ -70,17 +71,19 @@ class Solution:
                     string = "Soda"
                 case "Dinner":
                     string = "Wine"
-            self.error = "Unable to process: " + string + " cannot be ordered more than once"
+            self.error = string + " cannot be ordered more than once"
         elif self.meal != "Dinner" and '4' in self.items:
-            self.error = "Unable to process: Dessert can only be ordered at dinner"
+            self.error = "Dessert can only be ordered at dinner"
         elif self.meal == "Dinner" and '4' not in self.items:
-            self.error = "Unable to process: Dessert is missing"
+            self.error = "Dessert is missing"
         elif self.meal == "Dinner" and self.items.count('4') > 1:
-            self.error = "Unable to process: Dessert cannot be ordered more than once"
+            self.error = "Dessert cannot be ordered more than once"
         if self.error:
             raise Exception()
             
     def _returnString(self, order):
+        if not order.drink:
+            order.drink = "Water"
         string = order.main + ", " + order.side + ", " + order.drink
         if self.meal == "Dinner":
             string += ", " + order.dessert

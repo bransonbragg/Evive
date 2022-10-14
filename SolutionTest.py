@@ -2,7 +2,7 @@ import unittest
 from Solution import Solution
 from Meals import Breakfast, Lunch, Dinner
 
-class TestLinkedListMethods(unittest.TestCase):
+class TestSolutionMethods(unittest.TestCase):
     def testParse(self, query, intended):
         soln = Solution(query)
         self.assertEqual(soln._parse(), intended)
