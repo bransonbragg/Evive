@@ -2,19 +2,23 @@ class Solution:
     def __init__(self, query, meal=None, items=None, error=None):
         self.query = query
         self.meal, self.items, self.error = meal, items, error
+        
+    def doOrder(self):
         try:
             self._parse()
             self._validateOrder()
             match self.meal:
                 case "Breakfast":
-                    Order = Breakfast(items)
+                    Order = Breakfast(self.items)
                 case "Lunch":
-                    Order = Lunch(items)
+                    Order = Lunch(self.items)
                 case "Dinner":
-                    Order = Dinner(items)
+                    Order = Dinner(self.items)
+            for item in Order.items:
+                Order.getItems(int(item))
             return self._returnString(Order)
         except:
-            print(self.error)
+            return self.error
             
     def _parse(self):
         if self.query.startswith("Breakfast"):
@@ -57,7 +61,7 @@ class Solution:
                 case "Dinner":
                     string = "Potatoes"
             self.error = "Unable to process: " + string + " cannot be ordered more than once"
-        elif self.meal != "Breakfast" and '3' in self.items and self.items.count('3' > 1):
+        elif self.meal != "Breakfast" and '3' in self.items and self.items.count('3') > 1:
             string = ""
             match self.meal:
                 case "Lunch":
@@ -75,54 +79,55 @@ class Solution:
             raise Exception()
             
     def _returnString(self, order):
-        string = str(order.main + ", " + order.side + ", " + order.drink)
-        if order.dessert:
+        string = order.main + ", " + order.side + ", " + order.drink
+        if self.meal == "Dinner":
             string += ", " + order.dessert
         return string
     
 class Breakfast:
-    def __init__(self, items, main=None, side=None, drink=None):
+    def __init__(self, items, main="", side="", drink="", drinkCounter=0):
         self.items = items
-        self.main, self.side, self.drink = main, side, drink
-        
-    def getItems(self):
-        match self.items:
+        self.main, self.side, self.drink, self.drinkCounter = main, side, drink, drinkCounter
+    def getItems(self, num):
+        match num:
             case 1:
-                return "Eggs"
+                self.main = "Eggs"
             case 2:
-                return "Toast"
+                self.side = "Toast"
             case 3:
-                return "Coffee"
+                self.drinkCounter += 1
+                self.drink = "Coffee"
+                if self.drinkCounter > 1:
+                    self.drink += '(' + str(self.drinkCounter) + ')'
 
 class Lunch:
-    def __init__(self, items, main=None, side=None, drink=None):
+    def __init__(self, items, main="", side="", drink="", sideCounter=0):
         self.items = items
-        self.main, self.side, self.drink = main, side, drink
-        
-    def getItems(self):
-        match self.items:
+        self.main, self.side, self.drink, self.sideCounter = main, side, drink, sideCounter
+    def getItems(self, num):
+        match num:
             case 1:
-                return "Sandwich"
+                self.main = "Sandwich"
             case 2:
-                return "Chips"
+                self.side = "Chips"
+                self.sideCounter += 1
+                if self.sideCounter > 1:
+                    self.side += '(' + str(self.sideCounter) + ')'
             case 3:
-                return "Soda"
+                self.drink = "Soda"
     
 class Dinner:
-    def __init__(self, items, main=None, side=None, drink="Water"):
+    def __init__(self, items, main=None, side=None, drink="Water", dessert=None):
         self.items = items
-        self.main, self.side, self.drink = main, side, drink
+        self.main, self.side, self.drink, self.dessert = main, side, drink, dessert
         
-    def getItems(self):
-        match self.items:
+    def getItems(self, num):
+        match num:
             case 1:
-                return "Steak"
+                self.main = "Steak"
             case 2:
-                return "Potatoes"
+                self.side = "Potatoes"
             case 3:
-                return "Wine"
+                self.drink = "Wine, " + self.drink
             case 4:
-                return "Cake"
-    
-query = "Dinner 1,2,4,4"
-soln = Solution(query)
+                self.dessert = "Cake"
