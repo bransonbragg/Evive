@@ -5,15 +5,18 @@ Breakfast:
   Main: 1. Eggs   
   Side: 2. Toast  
   Drink: 3. Coffee  
+    
 Lunch:  
   Main: 1. Sandwich  
   Side: 2. Chips  
   Drink: 3. Soda  
+    
 Dinner:  
   Main: 1. Steak  
   Side: 2. Potatoes  
   Drink: 3. Wine  
   Dessert: 4. Cake  
+    
   
 Rules:  
 1. An order consists of a meal and collection of comma separated item Ids.  
@@ -26,7 +29,7 @@ Rules:
 8. At lunch, multiple sides can be ordered  
 9. At dinner, dessert must be ordered  
 10. At dinner, water is always provided   
-
+   
 Sample Input/Output  
 In: Breakfast 1,2,3  
 Out: Eggs, Toast, Coffee  
