@@ -9,7 +9,7 @@ The <strong>Solution</strong> folder contains OOP implementation of the ordering
 -- <strong>Solution.py</strong> contains the Solution, Breakfast, Lunch, and Dinner classes <br>  
 The <strong>testing</strong> folder  <br>
 -- <strong>testSuite.py</strong> contains testing on the provided examples with additional edge cases   <br>
--- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  v\<br>
+-- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  <br>
 <br>
 Breakfast:  
   Main: 1. Eggs   
