@@ -1,5 +1,4 @@
-from Solution.Solution import Solution
-from Solution.Meals import Breakfast, Lunch, Dinner
+from solution import *
 from testing.MethodTest import TestMethods
 
 sampleTests = ["Breakfast 1,2,3", "Breakfast 2,3,1", "Breakfast 1,2,3,3,3", 

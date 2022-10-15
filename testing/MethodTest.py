@@ -1,6 +1,5 @@
 import unittest
-from Solution.Solution import Solution
-from Solution.Meals import Breakfast, Lunch, Dinner
+from solution import *
 
 class TestMethods(unittest.TestCase):
     def testParse(self, query, intended):

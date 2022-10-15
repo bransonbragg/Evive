@@ -1,9 +1,9 @@
-from Solution.Meals import Breakfast, Lunch, Dinner
+from Meals import Breakfast, Lunch, Dinner
 
-class Solution:
-    def __init__(self, query, meal=None, items=None, error=None):
+class OrderUp:
+    def __init__(self, query):
         self.query = query
-        self.meal, self.items, self.error = meal, items, error
+        self.meal, self.items, self.error = None, None, None
         
     def doOrder(self):
         try:
@@ -11,13 +11,13 @@ class Solution:
             self._validateOrder()
             match self.meal:
                 case "Breakfast":
-                    Order = Breakfast(self.items)
+                    Order = Breakfast()
                 case "Lunch":
-                    Order = Lunch(self.items)
+                    Order = Lunch()
                 case "Dinner":
-                    Order = Dinner(self.items)
-            for item in Order.items:
-                Order.getItems(int(item))
+                    Order = Dinner()
+            for item in self.items:
+                Order._setItem(int(item))
             return self._retString(Order)
         except:
             self.error = "Unable to process: " + self.error
@@ -74,10 +74,11 @@ class Solution:
             self.error = string + " cannot be ordered more than once"
         elif self.meal != "Dinner" and '4' in self.items:
             self.error = "Dessert can only be ordered at dinner"
-        elif self.meal == "Dinner" and '4' not in self.items:
-            self.error = "Dessert is missing"
-        elif self.meal == "Dinner" and self.items.count('4') > 1:
-            self.error = "Dessert cannot be ordered more than once"
+        elif self.meal == "Dinner":
+            if '4' not in self.items:
+                self.error = "Dessert is missing"
+            if self.items.count('4') > 1:
+                self.error = "Dessert cannot be ordered more than once"
         if self.error:
             raise Exception()
         
@@ -88,4 +89,3 @@ class Solution:
         if self.meal == "Dinner":
             string += ", " + Order.dessert
         return string
-    
