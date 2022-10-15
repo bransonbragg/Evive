@@ -1,12 +1,12 @@
 # Evive
 
 
-<h1>Entry SE Test for Evive.</h1>  
+<h1>Entry SE Test for Evive.</h1>   
   
-<h2>Guide</h2>
-The <strong>Solution</strong> folder contains OOP implementation of the ordering system
--- **main.py** runs the program as outlined in the problem statement 
--- **Solution.py** contains the Solution, Breakfast, Lunch, and Dinner classes  
+<h2>Guide</h2>    
+The <strong>Solution</strong> folder contains OOP implementation of the ordering system  
+-- **main.py** runs the program as outlined in the problem statement   
+-- **Solution.py** contains the Solution, Breakfast, Lunch, and Dinner classes   
 The **testing** folder  
 -- **testSuite.py** tests that the provided examples product correct output   
 -- -- I added additional tests and more can easily be added on to the additional_tests array  
