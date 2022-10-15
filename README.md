@@ -1,6 +1,16 @@
 # Evive
-Entry SE Test for Evive. 
 
+
+<h1>Entry SE Test for Evive.</h1>   
+  
+<h2>Guide</h2>    
+The <strong>Solution</strong> folder contains OOP implementation of the ordering system  <br>
+-- <strong>main.py</strong> runs the program as outlined in the problem statement   <br>
+-- <strong>Solution.py</strong> contains the Solution, Breakfast, Lunch, and Dinner classes <br>  
+The <strong>testing</strong> folder  <br>
+-- <strong>testSuite.py</strong> contains testing on the provided examples with additional edge cases   <br>
+-- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  <br>
+<br>
 Breakfast:  
   Main: 1. Eggs   
   Side: 2. Toast  
