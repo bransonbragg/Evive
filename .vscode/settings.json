@@ -1,0 +1,11 @@
+{
+    "code-runner.defaultLanguage": "python3",
+    "code-runner.enableAppInsights": false,
+    "code-runner.executorMap": {
+        "python": "python3 -u"
+    },
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}/src;${workspaceFolder}/tests"
+    },
+    "python.envFile": "${workspaceFolder}/.env",
+}

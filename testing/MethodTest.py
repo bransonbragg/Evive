@@ -1,17 +1,23 @@
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+
+from Solution.Solution import *
 import unittest
-from solution import *
 
 class TestMethods(unittest.TestCase):
     def testParse(self, query, intended):
-        soln = Solution(query)
+        soln = OrderUp(query)
         self.assertEqual(soln._parse(), intended)
     def testValidateOrder(self, query, intended):
-        soln = Solution(query)
+        soln = OrderUp(query)
         self.assertEqual(soln._validateOrder, intended)
     def testReturnString(self, Soln, Order, intended):
         self.assertEqual(Soln._returnString(Order), intended)
     def testDoOrder(self, query, intended):
-        Soln = Solution(query)
+        Soln = OrderUp(query)
         self.assertEqual(Soln.doOrder(), intended)
     def testBreakfast(self, items, intended):
         Order = Breakfast(items)

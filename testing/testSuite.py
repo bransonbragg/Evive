@@ -1,4 +1,10 @@
-from solution import *
+import sys
+import os
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.dirname(SCRIPT_DIR))
+
+from Solution.Solution import *
 from testing.MethodTest import TestMethods
 
 sampleTests = ["Breakfast 1,2,3", "Breakfast 2,3,1", "Breakfast 1,2,3,3,3", 
@@ -47,14 +53,14 @@ def test():
     # exectuting sample tests
     for i in range(len(sampleTests)):
         sample = sampleTests[i]
-        Soln = Solution(sample)
+        Soln = OrderUp(sample)
         result = Soln.doOrder()
         assert(result == sampleReturns[i]) 
         
     # executing additional tests
     for i in range(len(additionalTests)):
         test = additionalTests[i]
-        Soln = Solution(test)
+        Soln = OrderUp(test)
         result = Soln.doOrder()
         assert(result == additionalIntended[i])
         
