@@ -5,12 +5,12 @@
   
 <h2>Guide</h2>    
 The <strong>Solution</strong> folder contains OOP implementation of the ordering system  <br>
--- **main.py** runs the program as outlined in the problem statement   <br>
--- **Solution.py** contains the Solution, Breakfast, Lunch, and Dinner classes <br>  
-The **testing** folder  <br>
--- **testSuite.py** tests that the provided examples product correct output   <br>
+-- <strong>main.py</strong> runs the program as outlined in the problem statement   <br>
+-- <strong>Solution.py</strong> contains the Solution, Breakfast, Lunch, and Dinner classes <br>  
+The <strong>testing</strong> folder  <br>
+-- <strong>testSuite.py</strong> tests that the provided examples product correct output   <br>
 -- -- I added additional tests and more can easily be added on to the additional_tests array  <br>
--- **MethodTest.py** contains unit tests for all of the class methods  v\<br>
+-- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  v\<br>
 <br>
 Breakfast:  
   Main: 1. Eggs   
