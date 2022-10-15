@@ -1,8 +1,8 @@
-from Solution.Solution import Solution 
+from Solution import OrderUp
 
 def main():
     query = input("")
-    soln = Solution(query)
+    soln = OrderUp(query)
     return soln.doOrder()
     
 if __name__ == '__main__':
