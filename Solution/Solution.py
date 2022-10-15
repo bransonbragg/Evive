@@ -87,9 +87,11 @@ class OrderUp:
         if self.meal == "Dinner":
             string += ", " + Order.dessert
         return string
+    
 class Breakfast:
     def __init__(self):
-        self.main, self.side, self.drink, self.drinkCounter = "", "", "", 0
+        self.main, self.side, self.drink = None, None, None
+        self.drinkCounter = 0
     def _setItem(self, num):
         match num:
             case 1:
@@ -104,7 +106,8 @@ class Breakfast:
 
 class Lunch:
     def __init__(self):
-        self.main, self.side, self.drink, self.sideCounter = "", "", "", 0
+        self.main, self.side, self.drink = None, None, None
+        self.sideCounter = 0
     def _setItem(self, num):
         match num:
             case 1:
@@ -119,7 +122,8 @@ class Lunch:
     
 class Dinner:
     def __init__(self, drink="Water"):
-        self.main, self.side, self.dessert, self.drink = "", "", "", drink
+        self.main, self.side, self.dessert = None, None, None
+        self.drink = drink
     def _setItem(self, num):
         match num:
             case 1:

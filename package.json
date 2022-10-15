@@ -1,9 +1,9 @@
 {
-  "name": "Evive-1",
+  "name": "Evive",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {},
   "code-runner.executorMap": {
-      "python": "python3 -u"
-    } 
+    "python": "python3 -u"
+  }
 }
