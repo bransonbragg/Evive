@@ -8,7 +8,7 @@ The <strong>Solution</strong> folder contains OOP implementation of the ordering
 -- <strong>main.py</strong> runs the program as outlined in the problem statement   <br>
 -- <strong>Solution.py</strong> contains the Solution, Breakfast, Lunch, and Dinner classes <br>  
 The <strong>testing</strong> folder  <br>
--- <strong>testSuite.py</strong> tests that the provided examples product correct output   <br>
+-- <strong>testSuite.py</strong> contains testing on the provided examples with additional edge cases   <br>
 -- -- I added additional tests and more can easily be added on to the additional_tests array  <br>
 -- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  v\<br>
 <br>
