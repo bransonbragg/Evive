@@ -4,7 +4,7 @@
 <h1>Entry SE Test for Evive.</h1>   
   
 <h2>Guide</h2>    
-The <strong>Solution</strong> folder contains OOP implementation of the ordering system  
+The <strong>Solution</strong> folder contains OOP implementation of the ordering system  <br>
 -- **main.py** runs the program as outlined in the problem statement   
 -- **Solution.py** contains the Solution, Breakfast, Lunch, and Dinner classes   
 The **testing** folder  
