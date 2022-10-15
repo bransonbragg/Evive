@@ -11,6 +11,8 @@ The <strong>testing</strong> folder  <br>
 -- <strong>testSuite.py</strong> contains testing on the provided examples with additional edge cases   <br>
 -- <strong>MethodTest.py</strong> contains unit tests for all of the class methods  <br>
 <br>
+<br>
+
 Breakfast:  
   Main: 1. Eggs   
   Side: 2. Toast  
